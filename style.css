@@ -3,11 +3,27 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    background-image: url(pup.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     color: #333;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
 .header {
-    background-color: #800000;
+    background-color: rgba(128, 0, 0, 0.6); 
     color: white;
     padding: 10px;
     text-align: left;
@@ -17,7 +33,7 @@ body {
 }
 
 .header img {
-    margin-right: 20px;
+    margin-right: 25px;
     border-radius: 50%;
 }
 
@@ -28,29 +44,35 @@ body {
 .title {
     text-align: center;
     margin: 20px 0;
-    font-size: 1.2em;
-    color: #800000;
+    font-size: 1em;
+    color: #ffffff;
 }
 
 .lyrics {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow-y: auto;
     line-height: 1.2;
+    height: 300px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .lyrics p {
     margin: 10px 0;
+    text-align: center;
 }
 
 .lyrics p.highlight {
-    color: #c1121f;
+    color: #daa520;
     font-weight: bold;
     font-size: 1.1em;
+    background-color: #800000;
+    border-radius: 10px;
 }
 
 audio {
@@ -63,4 +85,15 @@ audio {
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 2px;
+    background-color: rgba(74, 46, 46, 0.8); 
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
 }
